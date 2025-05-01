@@ -1,0 +1,16 @@
+{
+	"generate template": {
+		"prefix": "tsfc",
+		"body": [
+			"`use client;`",
+			"const $TM_FILENAME_BASE = () =>{",
+			"return (",
+			"div$0",
+			" );",
+			"};",
+			"",
+			"export default $TM_FILENAME_BASE;"
+		],
+		"description": "Log output to console"
+	}
+}
