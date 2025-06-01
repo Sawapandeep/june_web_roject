@@ -16,7 +16,8 @@ const Footer = () => {
                 {/* Brand & Newsletter */}
                 <div>
                     <h2 className="text-2xl font-extrabold text-orange-600 mb-2">
-                        Foodie<span className="text-black dark:text-white">HuB</span>
+                        <img src="logo.svg" alt="FoodieHUB" className="h-6 w-auto" />
+                        {/* Foodie<span className="text-black dark:text-white">HuB</span> */}
                     </h2>
                     <p className="text-neutral-600 dark:text-neutral-300 mb-4">
                         Sign up for delicious updates and get 20% off your first order!
@@ -40,7 +41,7 @@ const Footer = () => {
                 {/* Quick Links */}
                 <div>
                     <h3 className="font-semibold text-neutral-800 dark:text-white mb-3">Explore</h3>
-                    <ul className="space-y-3 text-neutral-600 dark:text-neutral-300">
+                    <ul className="space-y-2 text-neutral-600 dark:text-neutral-300">
                         {['Menu', 'Deals & Offers', 'Franchise', 'Delivery Info', 'Gift Cards'].map((item) => (
                             <li key={item} className="hover:text-orange-600 transition cursor-pointer">{item}</li>
                         ))}

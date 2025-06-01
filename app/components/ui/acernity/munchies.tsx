@@ -1,0 +1,102 @@
+import { Marquee } from "@/app/components/ui/magic/marquee";
+import Image from "next/image";
+
+const products = [
+    {
+        name: "Classic Cheeseburger",
+        price: "$5.99",
+        image: "https://images.pexels.com/photos/18713425/pexels-photo-18713425/free-photo-of-fast-food-on-black-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+        name: "Double Cheeseburger",
+        price: "$9.00",
+        image: "https://images.pexels.com/photos/21820165/pexels-photo-21820165/free-photo-of-cheeseburger-on-black-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+        name: "Pasta",
+        price: "$10.00",
+        image: "https://images.pexels.com/photos/12800961/pexels-photo-12800961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+        name: "Mac and Cheese",
+        price: "$9.50",
+        image: "https://images.pexels.com/photos/806357/pexels-photo-806357.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+        name: "French Fries",
+        price: "$3.00",
+        image: "https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+        name: "Onion Rings",
+        price: "$4.00",
+        image: "https://images.pexels.com/photos/1797171/pexels-photo-1797171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+        name: "Chicken Nuggets",
+        price: "$6.00",
+        image: "https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+        name: "Crispy Chicken Sandwich",
+        price: "$8.50",
+        image: "https://images.pexels.com/photos/1600732/pexels-photo-1600732.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+        name: "Spicy Chicken Burger",
+        price: "$9.00",
+        image: "https://images.pexels.com/photos/6896379/pexels-photo-6896379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+        name: "Loaded French Fries",
+        price: "$5.00",
+        image: "https://images.pexels.com/photos/30204394/pexels-photo-30204394/free-photo-of-delicious-loaded-fries-with-toppings.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+
+    {
+        name: "Veggie Burger",
+        price: "$8.00",
+        image: "https://images.pexels.com/photos/1199958/pexels-photo-1199958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+    {
+        name: "Chicken Wrap",
+        price: "$7.50",
+        image: "https://images.pexels.com/photos/15010305/pexels-photo-15010305/free-photo-of-close-up-photo-of-a-burrito.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+];
+export function Munchies() {
+    return (
+        <section className="py-16 px-4 bg-white dark:bg-black text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-black dark:text-white">
+                FEATURED MUNCHIES
+            </h2>
+            <p className="text-sm text-orange-600 mb-8">
+                Best Seller Product This Season!
+            </p>
+
+            <Marquee className="w-full" pauseOnHover>
+                {products.map((product, index) => (
+                    <div
+                        key={index}
+                        className="flex flex-col items-center min-w-[200px] sm:min-w-[240px] mx-4"
+                    >
+                        <div className="relative w-32 h-32 sm:w-40 sm:h-40">
+                            <Image
+                                src={product.image}
+                                alt={product.name}
+                                fill
+                                className="object-contain rounded"
+                            />
+                        </div>
+                        <h3 className="mt-4 font-medium text-black dark:text-white text-sm sm:text-base">
+                            {product.name}
+                        </h3>
+                        <p className="text-orange-600 font-bold mt-1 text-sm sm:text-base">
+                            {product.price}
+                        </p>
+                    </div>
+                ))}
+            </Marquee>
+        </section>
+    );
+}

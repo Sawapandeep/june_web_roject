@@ -1,4 +1,5 @@
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const Navbar: React.FC = () => {
@@ -53,7 +54,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         {/* Logo + Location */}
         <div className="flex items-center space-x-2">
-          <img src="/logo.png" alt="FoodieHUB" className="h-8 w-auto" />
+          <img src="logo.svg" alt="FoodieHUB" className="h-8 w-auto" />
           <div className="flex flex-col">
             <div className="flex items-center gap-1 text-sm">
               <span role="img" aria-label="location">
@@ -71,12 +72,12 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center space-x-6">
           <div className="text-sm">
             📞 Call us at{" "}
-            <span className="font-semibold text-orange-600">07738383000</span>
+            <span className="font-semibold text-orange-600">0123456789</span>
           </div>
-          <button className="hover:text-orange-600">Search</button>
-          <button className="hover:text-orange-600">Cart</button>
-          <button className="hover:text-orange-600 font-semibold">Sign In</button>
-          <button className="hover:text-orange-600">My Profile</button>
+          {/* <button className="hover:text-orange-600">Search</button> */}
+          <Link href="/cart" className="hover:text-orange-600">Cart</Link>
+          <Link href="/signin" className="hover:text-orange-600">Sign In</Link>
+          <Link href="/profile" className="hover:text-orange-600">My Profile</Link>
         </div>
 
         {/* Mobile menu toggle */}
@@ -93,20 +94,15 @@ const Navbar: React.FC = () => {
         <div className="md:hidden bg-black shadow-md px-4 pb-4 space-y-2 text-white">
           <div className="text-sm">
             📞 Call us at{" "}
-            <span className="font-semibold text-orange-600">07738383000</span>
+            <span className="font-semibold text-orange-600">0123456789</span>
           </div>
-          <button className="block w-full text-left hover:text-orange-600">
+          {/* <button className="block w-full text-left hover:text-orange-600">
             Search
-          </button>
-          <button className="block w-full text-left hover:text-orange-600">
-            Cart
-          </button>
-          <button className="block w-full text-left hover:text-orange-600 font-semibold">
-            Sign In
-          </button>
-          <button className="block w-full text-left hover:text-orange-600">
-            My Profile
-          </button>
+          </button> */}
+          <Link href="/cart" className="hover:text-orange-600">Cart</Link>
+          <Link href="/signin" className="hover:text-orange-600">Sign In</Link>
+          <Link href="/profile" className="hover:text-orange-600">My Profile</Link>
+
         </div>
       )}
     </header>
