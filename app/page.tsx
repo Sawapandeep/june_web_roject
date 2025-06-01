@@ -1,7 +1,10 @@
 "use client";
-import Navbar from "./containers/Navbar";
+import { MenuSection } from "./components/ui/acernity/feature-section";
 import CarouselContainer from "./containers/CarouselContainer";
+import CTA from "./containers/cta";
 import FoodGallery from "./containers/FoodGallery";
+import Footer from "./containers/Footer";
+import Navbar from "./containers/Navbar";
 import { Testimonials } from "./containers/Testimonials";
 
 export default function Home() {
@@ -9,8 +12,11 @@ export default function Home() {
     <div>
       <Navbar />
       <CarouselContainer />
-      <FoodGallery />
+      {/* <FoodGallery /> */}
+      <MenuSection />
+      <CTA />
       <Testimonials />
+      <Footer />
     </div>
   );
 }

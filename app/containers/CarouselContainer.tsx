@@ -1,23 +1,20 @@
 "use client";
-import React from "react";
 import ImageCarousel, {
   SlideContent,
 } from "@/app/components/ui/myui/image-carousel";
+import React from "react";
 
-import Image from "next/image";
 
-import pizza from "@/public/images/pizza.jpg";
 const slidesData: SlideContent[] = [
   {
-    image: "https://unsplash.com/photos/pizza-with-berries-MQUqbmszGGM",
+    image: "/images/pizza.png",
     title: "Adventure Awaits",
     description: "Take the leap and explore uncharted territories.",
     buttonText: "Join Us",
     buttonHref: "/adventure",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2560&q=80",
+    image: "/images/pizza.png",
     title: "Seaside Relaxation",
     description: "Feel the breeze and relax by the ocean.",
     buttonText: "Discover More",
