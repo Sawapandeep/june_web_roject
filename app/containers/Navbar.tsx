@@ -53,60 +53,52 @@ const Navbar: React.FC = () => {
     <header className="w-full shadow-md bg-black fixed z-50 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         {/* Logo + Location */}
-        <div className="flex items-center space-x-2">
-          <img src="logo.svg" alt="FoodieHUB" className="h-8 w-auto" />
-          <div className="flex flex-col">
-            <div className="flex items-center gap-1 text-sm">
-              <span role="img" aria-label="location">
-                📍
-              </span>
+        <div className="flex items-center gap-2">
+          <img src="/logo.svg" alt="FoodieHUB" className="h-8 w-auto" />
+          <div className="flex flex-col text-xs sm:text-sm">
+            <div className="flex items-center gap-1">
+              <span role="img" aria-label="location">📍</span>
               <button onClick={getLocation} className="text-white hover:text-orange-500 underline">
                 Update Location
               </button>
             </div>
-            <p className="text-xs text-gray-400">{location}</p>
+            <p className="text-gray-400">{location}</p>
           </div>
         </div>
 
-        {/* Desktop menu */}
-        <div className="hidden md:flex items-center space-x-6">
-          <div className="text-sm">
-            📞 Call us at{" "}
-            <span className="font-semibold text-orange-600">0123456789</span>
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex items-center space-x-6 text-sm">
+          <div>
+            📞 Call us at <span className="font-semibold text-orange-600">0123456789</span>
           </div>
-          {/* <button className="hover:text-orange-600">Search</button> */}
           <Link href="/cart" className="hover:text-orange-600">Cart</Link>
-          <Link href="/signin" className="hover:text-orange-600">Sign In</Link>
-          <Link href="/profile" className="hover:text-orange-600">My Profile</Link>
-        </div>
+          <Link href="/signin" className="hover:text-orange-600">My Profile</Link>
+        </nav>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile Menu Toggle */}
         <button
           className="md:hidden text-white"
-          onClick={() => setMenuOpen((prev) => !prev)}
+          onClick={() => setMenuOpen(prev => !prev)}
+          aria-label="Toggle menu"
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-black shadow-md px-4 pb-4 space-y-2 text-white">
-          <div className="text-sm">
-            📞 Call us at{" "}
-            <span className="font-semibold text-orange-600">0123456789</span>
+      {/* Mobile Menu */}
+      <div className={`md:hidden bg-black shadow-md px-4 py-2 text-white transition-all duration-300 ease-in-out ${menuOpen ? 'block' : 'hidden'}`}>
+        <div className="space-y-2 text-sm">
+          <div>
+            📞 Call us at <span className="font-semibold text-orange-600">0123456789</span>
           </div>
-          {/* <button className="block w-full text-left hover:text-orange-600">
-            Search
-          </button> */}
-          <Link href="/cart" className="hover:text-orange-600">Cart</Link>
-          <Link href="/signin" className="hover:text-orange-600">Sign In</Link>
-          <Link href="/profile" className="hover:text-orange-600">My Profile</Link>
+          <Link href="/cart" className="block hover:text-orange-600">Cart</Link>
 
+          <Link href="/signin" className="block hover:text-orange-600">My Profile</Link>
         </div>
-      )}
+      </div>
     </header>
   );
 };
 
 export default Navbar;
+
